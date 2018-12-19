@@ -1,0 +1,18 @@
+- hosts: all
+  tasks:
+    - name: copy sshd config to the servers
+      copy:
+        src: ../configs/ubuntu/18.04/etc/ssh/sshd_config
+        dest: /etc/ssh/sshd_config
+        owner: root
+        mode: 0644
+        backup: yes
+      become: yes
+      notify: restart ssh
+
+  handlers:
+    - name: restart ssh
+      shell: sleep 3; /etc/init.d/ssh restart
+      async: 1
+      poll: 0
+      become: yes
