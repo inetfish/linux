@@ -1,0 +1,10 @@
+- hosts: web
+  tasks:
+    - name: copy webfiles to web server
+      copy:
+        src: ../web/
+        dest: /web/
+        owner: root
+        mode: 0644
+        backup: yes
+      become: yes
