@@ -1,0 +1,18 @@
+- hosts: docker
+  tasks:
+    - name: copy sshd netplan config to the servers
+      copy:
+        src: ../configs/ubuntu/18.04/etc/netplan/01-netcfg.yaml
+        dest: /etc/netplan/
+        owner: root
+        mode: 0644
+        backup: yes
+      become: yes
+      notify: restart network
+
+  handlers:
+    - name: restart network
+      shell: sleep 3; sudo netplan apply
+      async: 1
+      poll: 0
+      become: yes
