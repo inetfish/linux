@@ -1,4 +1,4 @@
-- hosts: docker
+- hosts: jump
   tasks:
     - name: copy sshd netplan config to the servers
       copy:
