@@ -1,0 +1,7 @@
+- hosts: web
+  - name: create a new user for running web sites and services.
+      user:
+        name: webuser
+	password: free63Guard | password_hash('sha512')
+        creathome: no
+

@@ -1,0 +1,8 @@
+- hosts: web
+  tasks:
+    - name: create web directory with permissions
+      file:
+        path: /web/
+        state: directory
+        owner: root
+        mode: 0755
