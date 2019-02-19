@@ -1,8 +1,10 @@
 [docker]
 docker1
+docker2
 
 [web]
 docker1
+docker2
 
 [jump]
 jump1
