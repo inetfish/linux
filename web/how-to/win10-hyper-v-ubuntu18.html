@@ -9,28 +9,38 @@
 <p><a href="/">Home</a></p>
 
 <p>
-In my enviornment, my host computer is windows 10 running Hyper-V.
+
+<h2>Setup Ubuntu virtual machine(s) using Windows10 Pro & Hyper-v.</h2>
+
+The reference environment is Windows 10 Pro host running Hyper-V as the base foundation for the VMs. <br />
+Follow the instructions to setup VMs as needed. <br />
+
+
 <ol>
-	<li>Ubuntu 18.04 VHD Download</li>
-	<li>Create a folder for your new virutal machine</li>
-	<li>Make a copy of your VHD from step 1</li>
-	<li>Create a new VM using Hyper-V manager </li>
-		<ul><li>new | virtual machine</ul></li>
+	<li>Ubuntu 18.04 VHD download -- See VHD download step for VHD details</li>
+	<li>Create a new folder for your new virutal machine</li>
+	<li>Make a copy of the VHD ,from step 1, into the new folder</li>
+	<li>Start Windows 10 Hyper-V:wq! manager to create a new virtual machine </li>
+		<ul><li>Start menu | Type Hyper-V and select it from the start menu.</li></ul>
+	<li>From the Hyper-V app select -- new | virtual machine</li>
 	<li>Specify the name and location</li>
 	<li>Select G2 as the generation</li>
 	<li>Assign memory: 1024/Dynamic </li>
+	<li>Select WAN for network</li>
 	<li>Connect Virutal Hard Disk</li>
-		<ul><li>Select use an existing & the vhd from #3</li>
-	<li<>Finish</li>
+		<ul>
+		<li>Select use an existing & select the vhd location from step #3</li>
+		<li>Finish</li>
+		</ul>
 </ol>
-The new VM will now be in the hyper-v manager.
+The new VM will now be in the hyper-v manager. For it to boot, disable secure boot option.
 <ol>
 	<li>Right click the VM, select settings</li>
-	<li>Disable secure boot</li>
+	<li>Security | Uncheck - Enable Secure Boot</li>
 </ol>
 Now the VM can be started.
 </p>
-
+<hr />
     <ul>
         <li><a href="/contact.html">Contact Us</a></li>
     </ul>
