@@ -1,0 +1,9 @@
+
+if [ "$1" == "" ]; then
+	echo configure-network static-ip
+	exit 0
+else
+	cp ../configs/ubuntu/18.04/etc/netplan/01-netcfg.yaml /etc/netplan/
+	sed -i 's/ip-address/$1/g/' /etc/netplan/01-netcfg.yaml
+	netplan apply
+fi

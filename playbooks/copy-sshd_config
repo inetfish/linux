@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: web
   tasks:
     - name: copy sshd config to the servers
       copy:
