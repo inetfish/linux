@@ -19,7 +19,12 @@
 	 <li>Restart the server for the name change to take affect.
 		 <ul><li>sudo shutdown -r now</li></ul>
 	<li>Configure network for static IP
-		<ul><li>Run ./src/inetfish/scripts/configure-network (static-ip)</li></ul>
+		<ul><li>Copy ansible1/home/ansible/src/inetfish/config/ubuntu/18.04/etc/netplan/01-netcfg.yaml to /docker1/etc/netplan/</li>
+			<li>edit /docker1/etc/netplan/01-netcfg.yaml and update the ip-address to be your chosen static ip</li>
+			<li>when edit is complete run 'sudo netplan apply'</li>
+			<li>update ansible1 /etc/hosts with new entry</li>
+		</ul>
+
 </ol>
 <b>Security Updates</b>
 <ol>
