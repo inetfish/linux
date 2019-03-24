@@ -1,4 +1,4 @@
-- hosts: jump
+- hosts: kubemaster
   tasks:
     - name: copy sshd netplan config to the servers
       copy:

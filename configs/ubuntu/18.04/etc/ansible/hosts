@@ -1,13 +1,19 @@
+[kubecluster]
+kube[1:1]
+docker[1:2]
+
+
+[kubemaster]
+kube[1:1]
+
 [docker]
-docker1
-docker2
+docker[1:2]
 
 [web]
-docker1
-docker2
+docker[1:2]
 
 [jump]
-jump1
+jump[1:1]
 
 [all:vars]
 ansible_python_interpreter = /usr/bin/python3
