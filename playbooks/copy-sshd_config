@@ -1,4 +1,4 @@
-- hosts: web
+- hosts: kubemaster
   tasks:
     - name: copy sshd config to the servers
       copy:
