@@ -1,0 +1,17 @@
+- hosts: kubecluster
+
+  tasks:
+    - name: Turn off swap
+      shell: swapoff -a
+
+    - name: install kubernetes pre-reqs
+      shell: sudo apt-get update && sudo apt-get install -y apt-transport-https && curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+    - name: add kubernetes to sources.list
+      shell: echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" |  sudo tee -a /etc/apt/sources.list.d/kubernetes.list && sudo apt-get update 
+
+    - name: install kubelet, kubeadm, kubernetes-cni
+      shell: sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubernetes-cni
+
+
+

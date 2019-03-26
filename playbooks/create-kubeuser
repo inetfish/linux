@@ -1,0 +1,8 @@
+- hosts: kubecluster
+  tasks:
+   - name: create a new user for running kubes master and slave node processes.
+     user:
+       name: svc-kube
+       password: connection8Are | password_hash('sha512')
+       create_home: yes
+     become: true

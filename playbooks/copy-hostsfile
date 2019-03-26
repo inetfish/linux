@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+  - name: copy /etc/hosts file to all vms in ansible hosts file
+    copy:
+      src: /etc/hosts
+      dest: /etc/hosts
+      owner: root
+      mode: 0644
+    become: yes

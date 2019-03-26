@@ -2,7 +2,7 @@ network:
   ethernets:
     eth0:
       dhcp4: no
-      addresses: [ip-address/32]
+      addresses: [ip-addr/32]
       gateway4: 192.168.1.1
       nameservers:
         addresses: [9.9.9.9,8.8.8.8]
