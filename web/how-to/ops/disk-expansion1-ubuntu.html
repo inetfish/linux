@@ -1,0 +1,45 @@
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head><title>Home Infrastructure How-To Guides using Devops Tools -- github, ansible, docker, more.</title>
+<meta name="robots" content="noindex, nofollow" />
+</head>
+
+<body>
+
+<p><a href="/">Home</a></p>
+
+<p>
+<h2>Hyper-V Ubuntu 18.04 VM Disk Expansion</h2>
+<b>VHD Disk Expansion</b>
+<ol>
+	<li>If the VHD in this tutorial is used it is already expandable to 120GB from the default of 3GB
+	<li>Start a powershell console | cmd | powershell
+	<li>Run the resizer powershell command: <li>resize-vhd -Path <path> -SizeBytes <Xgb>
+</ol>
+
+<b>Ubuntu OS Disk Expansion</b>
+<p>
+If the VHD has the additional space available, the space just needs to be added to the root drive. 
+These instructions work with an Ubuntu OS that was configured with LVM for manaing the volumes and file systems.
+</p>
+<ol>
+        <li>Adapted from: <a href="https://www.tecmint.com/extend-and-reduce-lvms-in-linux/">TecMint</a>
+        <li>Run pvs to check the physical volume. There should be available disk space under PVFree Column.
+	<li>Now run vgdisplay to view the Free PE / Size. It is the maximum that can be added.
+	<li>Run the lvextend command to the logical volume. Replace the volume with your volumen name.
+	<li>The command will extend the volume by 4607 PE (18GB)
+	<li>lvextend -l 4607 /dev/mapper/ubuntu--vg-ubuntu--lv
+	<li>Now resize the filesystem
+	<li>resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+	<li>df to verify the space is added.
+</ol>
+
+</p>
+
+<hr />
+<a href="/contact.html">Contact Us</a> | &copy; inetfish.com </p>
+
+</body>
+
+</html>
+
