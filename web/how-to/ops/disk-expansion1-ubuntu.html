@@ -24,14 +24,18 @@ These instructions work with an Ubuntu OS that was configured with LVM for manai
 </p>
 <ol>
         <li>Adapted from: <a href="https://www.tecmint.com/extend-and-reduce-lvms-in-linux/">TecMint</a>
-        <li>Run pvs to check the physical volume. There should be available disk space under PVFree Column.
-	<li>Now run vgdisplay to view the Free PE / Size. It is the maximum that can be added.
-	<li>Run the lvextend command to the logical volume. Replace the volume with your volumen name.
-	<li>The command will extend the volume by 4607 PE (18GB)
-	<li>lvextend -l 4607 /dev/mapper/ubuntu--vg-ubuntu--lv
-	<li>Now resize the filesystem
-	<li>resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
-	<li>df to verify the space is added.
+        <li>Check the physical volume. There should be available disk space under PVFree Column.
+		<ul><li>pvs</li></ul>
+	<li>View the Free PE / Size. It is the maximum that can be added.
+		 <ul><li>vgdisplay</li></ul>
+	<li>Extend the logical volume. Replace the volume with your volumen name.
+		<ul><li>The command will extend the volume by 4607 PE (18GB)
+		<li>lvextend -l 4607 /dev/mapper/ubuntu--vg-ubuntu--lv
+		</ul>
+	<li>Now resize the filesystem so it wil recognize the additional disk space.
+		<ul><li>resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv</li></ul>
+	<li>Verify the space is added.
+		 <ul><li>df -h</li></ul>
 </ol>
 
 </p>
