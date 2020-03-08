@@ -2,7 +2,7 @@
   tasks:
     - name: create web directory with permissions
       file:
-        path: /web/
+        path: /opt/www/
         state: directory
         owner: root
         mode: 0755

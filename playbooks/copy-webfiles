@@ -3,7 +3,7 @@
     - name: copy webfiles to web server
       copy:
         src: ../web/
-        dest: /web/
+        dest: /opt/www/
         owner: root
         mode: 0644
         backup: yes

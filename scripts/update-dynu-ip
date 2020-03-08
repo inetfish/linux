@@ -1,0 +1,20 @@
+#
+#script to update dyndu.com dns for self hosting.
+#
+
+LogPath=~/src/inetfish/scripts/update-dynu-ip.log
+
+#Get the current Public ip by checking for my ip.
+NewIP=`curl https://strehlo.com/myip/index.php`;
+
+echo $NewIP >> $LogPath
+
+#Update the ip with dynu.com. dynu.com will not update if there is no change
+curl -v "http://api.dynu.com/nic/update?hostname=inetfish.com&myip=$NewIP&pass&password=2163f95209668bd10f305a752c0827e7db6bbf6db5c6e83622b14cf54beb663e"  >> $LogPath
+
+echo \n >> $LogPath
+
+
+#
+#end
+#

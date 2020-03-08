@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./logger ALERT "This is a test"
