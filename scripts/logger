@@ -1,0 +1,16 @@
+#!/bin/bash
+# ^^ must be first line.
+
+#
+#Logger script to be called from other scripts in inetfish.
+#
+
+
+LogBaseDir=/var/log/inetfish
+Caller="$(ps -o args= $PPID)"
+
+echo $(date)
+echo $Caller
+echo $1
+
+
