@@ -1,0 +1,9 @@
+#!/bin/bash
+
+path_motd='/opt/inetfish/configs/data/motd'
+path_web='/opt/inetfish/web/tools'
+number=$(jq '.[] | length' $path_motd/motd.json)
+number=$(( RANDOM % number ))
+jq .data[$number].quote $path_motd/motd.json > $path_motd/motd.html
+jq .data[$number].author $path_motd/motd.json >> $path_motd/motd.html
+cp $path_motd/motd.html $path_web/motd.html

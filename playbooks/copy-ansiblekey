@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: copy authorized_keys file to ubuntu hosts.
+      copy:
+        src: ../configs/ubuntu/all/home/ansible/.ssh/authorized_keys
+        dest: /home/ansible/.ssh
+        owner: ansible
+        mode: 0600
+        backup: yes

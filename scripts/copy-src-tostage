@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cp -r ~/src/inetfish/web /opt/inetfish
+cp -r ~/src/inetfish/scripts /opt/inetfish
+cp -r ~/src/inetfish/configs /opt/inetfish
+cp -r ~/src/inetfish/playbooks /opt/inetfish
+
+

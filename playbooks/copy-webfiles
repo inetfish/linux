@@ -2,9 +2,9 @@
   tasks:
     - name: copy webfiles to web server
       copy:
-        src: ../web/
+        src: /opt/inetfish/web/
         dest: /opt/www/
         owner: root
         mode: 0644
         backup: yes
-      become: yes
+      become: true
