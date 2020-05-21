@@ -2,7 +2,8 @@
 #script to update dyndu.com dns for self hosting.
 #
 
-LogPath=~/src/inetfish/scripts/update-dynu-ip.log
+LogPath=/var/log/inetfish/update-dynu-ip.log
+
 
 #Get the current Public ip by checking for my ip.
 #

@@ -1,0 +1,23 @@
+
+inputfile=./input.txt
+outputfile=./motd.json
+count=0
+
+echo '{"data":[' > $outputfile
+while read p; do
+	count=$(($count+1))
+	s=$(echo $p | jq -R -n -c '[inputs|split("|")|{"id":.[0],"quote":.[1],"author":.[2]}] | add')
+	echo "$s," >>$outputfile
+done <$inputfile
+
+#last line hack
+#last line can't hava a comma so insert the last one here:
+quote="The Skynet Funding Bill is passed. The system goes on-line August 4th, 1997. Human decisions are removed from strategic defense. Skynet begins to learn at a geometric rate. It becomes self-aware at 2:14 a.m. Eastern time, August 29th. In a panic, they try to pull the plug."
+author=Terminator
+count=$(($count+1))
+s="{"\"id"\":"\"$count"\","\"quote"\":"\"$quote"\","\"author"\":"\"$author"\"}"
+echo $s >>$outputfile
+##end last line hack
+
+echo "]}" >>$outputfile
+
