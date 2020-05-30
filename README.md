@@ -6,4 +6,6 @@ This project is a living, growing collection of howtos and tools to apply devops
 
 The core infrastrucure is an ansible server and virtual machines hosting the inetfish.com website on docker containers.
 
+See it in action at http://inetfish.com
+
 ###
