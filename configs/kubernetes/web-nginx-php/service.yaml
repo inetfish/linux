@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-nginx-php
+  labels:
+    app: web-nginx-php
+spec:
+  type: NodePort
+  # externalTrafficPolicy: Local
+  ports:
+    - port: 80
+      nodePort: 30080
+  selector:
+    app: web-nginx-php
