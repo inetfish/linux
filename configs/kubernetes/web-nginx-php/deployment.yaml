@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: web-nginx-php
+spec:
+  selector:
+    matchLabels:
+      app: web-nginx-php
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web-nginx-php
+    spec:
+      volumes:
+        - name: nginx-config-volume
+          configMap:
+            name: nginx-config
+        - name: wwwdir
+          hostPath:
+            path: /opt/www
+      containers:
+      - name: web-nginx-volume
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+        - name: wwwdir
+          mountPath: /opt/www 
+      - name: php-fpm
+        image: php:fpm-alpine3.11
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: wwwdir
+          mountPath: /opt/www
+
+      

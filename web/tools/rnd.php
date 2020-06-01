@@ -20,11 +20,13 @@ if (isset($_SERVER['HTTP_IPBOB_REQUEST_URI']))
 	$min = intval($min);
 	$max = intval($max);
 
+	if ($min == $max) { $min = 0; $max = 100; }
+
 	if (!is_int($min)) { $min=0;}
 	if (!is_int($max)) { $max=100;}
 
 } else {
-	$min=1;
+	$min=0;
 	$max=100;
 }
 
