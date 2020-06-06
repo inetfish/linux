@@ -10,17 +10,9 @@ session_start();
     }
 print get_client_ip(); 
 
-print "<br /><br />";
-print "&nbsp;~^~~~~<br />";
-print "&nbsp;&nbsp;/&nbsp;~&nbsp;&nbsp;&nbsp;~&nbsp;\\<br />";
-print "&nbsp;(&nbsp;@&nbsp;&nbsp;@&nbsp;)<br />";
-print "&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{}&nbsp;&nbsp;&nbsp;|<br /> ";
-print "&nbsp;&nbsp;|&nbsp;^==^&nbsp;|<br /> ";
-print "&nbsp;&nbsp;&nbsp;\------/<br />";
-print "&nbsp;&nbsp;o--|--o<br />";
-print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;|<br /> ";
-print "&nbsp;&nbsp;&nbsp;&nbsp;_|&nbsp;|_<br />";
-		
+if (!strpos($_SERVER['QUERY_STRING'],"simple")){
+	        include 'bob.php';
+}
 
 // Function to get the client IP address 
 function get_client_ip() {
