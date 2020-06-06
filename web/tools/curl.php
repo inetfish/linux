@@ -38,15 +38,8 @@ if (isset($_SERVER['HTTP_IPBOB_REQUEST_URI']))
 	else{echo "invalid";}
 }
 
-print "<br /><br />";
-print "&nbsp;~^~~~~<br />";
-print "&nbsp;&nbsp;/&nbsp;~&nbsp;&nbsp;&nbsp;~&nbsp;\\<br />";
-print "&nbsp;(&nbsp;@&nbsp;&nbsp;@&nbsp;)<br />";
-print "&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{}&nbsp;&nbsp;&nbsp;|<br /> ";
-print "&nbsp;&nbsp;|&nbsp;^==^&nbsp;|<br /> ";
-print "&nbsp;&nbsp;&nbsp;\------/<br />";
-print "&nbsp;&nbsp;o--|--o<br />";
-print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;|<br /> ";
-print "&nbsp;&nbsp;&nbsp;&nbsp;_|&nbsp;|_<br />";
+if (!strpos($_SERVER['QUERY_STRING'],"simple")){
+	        include 'bob.php';
+}
 
 ?>
